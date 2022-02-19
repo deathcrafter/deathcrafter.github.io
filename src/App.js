@@ -1,23 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
+import Typed from 'react-typed';
+import 'react-typed/dist/animatedCursor.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <Typed
+        className='typed-text'
+        strings={['Hello World!', 'I am deathcrafter.', 'Thank you for visiting my profile!', 'death.crafter']}
+        cursorChar={'_'}
+        typeSpeed={70}
+        backSpeed={80}
+        startDelay={700}
+      />
     </div>
   );
 }
