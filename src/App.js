@@ -1,20 +1,17 @@
-import './App.css';
-import Typed from 'react-typed';
-import 'react-typed/dist/animatedCursor.css';
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
 
-function App() {
+import { Home, About, Blog } from "./pages";
+
+export default function App(props) {
   return (
-    <div className="container">
-      <Typed
-        className='typed-text'
-        strings={['Hello World!', 'I am deathcrafter.', 'Thank you for visiting my profile!', 'death.crafter']}
-        cursorChar={'_'}
-        typeSpeed={70}
-        backSpeed={80}
-        startDelay={700}
-      />
-    </div>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/blog" element={<Blog />} />
+      </Routes>
+    </Router>
   );
 }
-
-export default App;
