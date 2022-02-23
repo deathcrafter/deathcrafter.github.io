@@ -1,11 +1,12 @@
 import styled from "styled-components";
+import LogoBg from "../images/logobackground.svg";
 
 export const HomeContainer = styled.div`
   display: flex;
   justify-content: space-between;
   height: 100%;
   width: 100%;
-  background-color: #1c1c1c;
+  background-color: #25252a;
   overflow-y: auto;
 `;
 
@@ -44,7 +45,14 @@ export const LogoSection = styled.div`
   justify-content: center;
   align-items: center;
   max-width: 30vw;
-  background-color: #fefefe;
+  padding-left: min(5vw, 5vh);
+
+  background-color: #25252a;
+  background-image: url(${LogoBg});
+  background-repeat: no-repeat;
+  background-size: 100%;
+  /* background-position: center; */
+
   overflow: hidden;
 
   @media (max-aspect-ratio: 1620/1080) {
@@ -58,7 +66,7 @@ export const LogoContainer = styled.div`
   height: fit-content;
   padding-left: min(13vw, 13vh);
   padding-bottom: min(5vw, 5vh);
-  background-color: #fefefe;
+  background-color: transparent;
   transform: rotate(90deg);
 `;
 
@@ -67,10 +75,10 @@ export const Logo = styled.p`
   width: fit-content;
   height: fit-content;
   font-family: "Aquire", sans-serif;
-  font-size: min(50vw, 50vh);
-  font-weight: 700;
-  color: #1c1c1c;
-  text-shadow: 0 0 5px #424242;
+  font-size: min(40vw, 40vh);
+  font-weight: 500;
+  color: #fefefe;
+  text-shadow: 0 0 50px rgb(37, 37, 42, 0.25);
   &.second {
     transform: translateX(-31.5%);
   }

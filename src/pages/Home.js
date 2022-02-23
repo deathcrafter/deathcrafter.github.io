@@ -17,16 +17,17 @@ export default function Home(props) {
         <Name>
           SHAKTIJEET <br />
           SAHOO, A <br />
-          FRONTEND <br />
+          SOFTWARE <br />
           DEVELOPER
         </Name>
-        <Desc>efficient in HTML & CSS and inefficient in ReactJS.</Desc>
+        <Desc>
+          efficient in C, C++ & JavaScript and inefficient in Rust & Python.
+        </Desc>
       </TextContainer>
       <LogoSection>
         <LogoContainer>
           <Logo>D</Logo>
           <Logo className="second">C</Logo>
-          {/* <Parallelogram /> */}
         </LogoContainer>
       </LogoSection>
     </HomeContainer>

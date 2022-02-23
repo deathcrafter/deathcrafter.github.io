@@ -10,7 +10,7 @@ export const NavContainer = styled.div`
   gap: min(4vw, 4vh);
   height: 100%;
   width: min(13vw, 13vh);
-  background-color: #1c1c1c;
+  background-color: #25252a;
 
   @media (orientation: portrait) {
     flex-direction: row;
