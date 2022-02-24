@@ -1,7 +1,8 @@
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
 
-import { Home, About, Blog } from "./pages";
+const Home = <></>;
+const About = <></>;
+const Blog = <></>;
 
 export default function App(props) {
   return (
