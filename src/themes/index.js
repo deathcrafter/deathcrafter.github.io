@@ -64,7 +64,7 @@ const lightTheme = {
     },
     text: {
       default: "#000000",
-      inactive: "#303030",
+      inactive: "#505050",
     },
   },
   ...breakpoints,
