@@ -1,10 +1,10 @@
 import GlobalStyle from "./GlobalStyle";
-import useThemeDetector from "./ThemeDetector";
+import useThemeDetector from "../lib/useThemeDetector";
 
 const breakpoints = {
   breakpoints: {
     large: "1000px",
-    medium: "730px",
+    medium: "880px",
     small: "450px",
     xsmall: "",
   },

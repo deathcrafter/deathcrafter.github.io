@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { NavbarSection, NavbarContainer, NavButton } from "./style";
 import {
   HomeRounded,
@@ -6,15 +6,29 @@ import {
   PersonRounded,
   RssFeedRounded,
 } from "@mui/icons-material";
+import useMouseDetector from "../../lib/useMouseDetector";
 
 export default function Navbar(props) {
   const [active, setActive] = useState({
     active: false,
     timerId: undefined,
   });
+  const isMouseCapable = useMouseDetector();
+
+  useEffect(() => {
+    setActive({
+      active: true,
+      timerId: setTimeout(() => {
+        setActive({
+          active: false,
+          deactivating: false,
+          timerId: undefined,
+        });
+      }, 2000),
+    });
+  }, [isMouseCapable]);
 
   const handleMouseEnter = (e) => {
-    console.log("mouse enter");
     if (active.timerId) {
       clearTimeout(active.timerId);
     }
@@ -24,7 +38,6 @@ export default function Navbar(props) {
     });
   };
   const handleMouseLeave = (e) => {
-    console.log("mouse leave");
     setActive({
       active: true,
       timerId: setTimeout(() => {
@@ -33,27 +46,39 @@ export default function Navbar(props) {
           deactivating: false,
           timerId: undefined,
         });
-      }, 300),
+      }, 500),
     });
   };
 
   return (
     <NavbarSection>
       <NavbarContainer
-        className={active.active && "active"}
+        className={[active.active && "active", !isMouseCapable && "active"]}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
-        <NavButton className={active.active && "visible"} to="/">
+        <NavButton
+          className={[active.active && "visible", !isMouseCapable && "visible"]}
+          to="/"
+        >
           <HomeRounded style={{ fontSize: "2rem" }} />
         </NavButton>
-        <NavButton className={active.active && "visible"} to="/about">
+        <NavButton
+          className={[active.active && "visible", !isMouseCapable && "visible"]}
+          to="/about"
+        >
           <PersonRounded style={{ fontSize: "2rem" }} />
         </NavButton>
-        <NavButton className={active.active && "visible"} to="/blog">
+        <NavButton
+          className={[active.active && "visible", !isMouseCapable && "visible"]}
+          to="/blog"
+        >
           <RssFeedRounded style={{ fontSize: "2rem" }} />
         </NavButton>
-        <NavButton className={active.active && "visible"} to="/contact">
+        <NavButton
+          className={[active.active && "visible", !isMouseCapable && "visible"]}
+          to="/contact"
+        >
           <AlternateEmailRounded style={{ fontSize: "2rem" }} />
         </NavButton>
       </NavbarContainer>

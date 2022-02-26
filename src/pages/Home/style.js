@@ -3,6 +3,7 @@ import DCLogo from "../../images/DC";
 
 export const HomeContainer = styled.div`
   display: flex;
+  flex: 1;
   justify-content: space-between;
   min-height: 100%;
   width: 100%;
@@ -20,17 +21,24 @@ export const TextSection = styled.div`
   flex-direction: column;
   min-height: 100%;
   justify-content: center;
-  /* align-items: center; */
+
+  @media screen and (max-width: ${(props) => props.theme.breakpoints.medium}) {
+    flex: 1 0;
+    align-items: center;
+  }
 `;
 
 const HomeText = styled.p`
   font-family: "Ubuntu", sans-serif;
   color: ${(props) => props.theme.palette.text.default};
+  text-align: center;
   @media screen and (min-width: ${(props) => props.theme.breakpoints.medium}) {
-    padding: 0 1.5rem;
+    padding: 0 3rem;
+    text-align: left;
   }
   @media screen and (min-width: ${(props) => props.theme.breakpoints.big}) {
-    padding: 0 2.25rem;
+    padding: 0 4.5rem;
+    text-align: left;
   }
 `;
 
@@ -39,7 +47,7 @@ export const HomeHello = styled(HomeText)`
   font-weight: 400;
 
   @media screen and (min-width: ${(props) => props.theme.breakpoints.medium}) {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
   }
   @media screen and (min-width: ${(props) => props.theme.breakpoints.big}) {
     font-size: 2.25rem;
@@ -52,7 +60,7 @@ export const HomeName = styled(HomeText)`
   font-weight: 700;
 
   @media screen and (min-width: ${(props) => props.theme.breakpoints.medium}) {
-    font-size: calc(1.5rem * (6 / 2.25));
+    font-size: calc(1.7rem * (6 / 2.25));
   }
   @media screen and (min-width: ${(props) => props.theme.breakpoints.big}) {
     font-size: 6rem;
@@ -64,7 +72,7 @@ export const HomeDesc = styled(HomeText)`
   font-weight: 300;
 
   @media screen and (min-width: ${(props) => props.theme.breakpoints.medium}) {
-    font-size: calc(1.5rem * (1.5 / 2.25));
+    font-size: calc(1.7rem * (1.5 / 2.25));
   }
   @media screen and (min-width: ${(props) => props.theme.breakpoints.big}) {
     font-size: 1.5rem;
@@ -74,6 +82,20 @@ export const HomeDesc = styled(HomeText)`
 export const LogoSection = styled.div`
   display: flex;
   align-items: center;
+  justify-content: center;
+  padding: 0 1rem 0 3rem;
+
+  background-image: url("./images/LogoBgHor.svg");
+  background-position: right top;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @media screen and (max-width: ${(props) => props.theme.breakpoints.medium}) {
+    background-image: url("./images/LogoBgVer.svg");
+    background-position: center top;
+    width: 100%;
+    padding: 2rem 0 1rem 0;
+  }
 `;
 
 export const Logo = styled(DCLogo)`

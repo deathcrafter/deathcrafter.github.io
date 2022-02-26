@@ -27,12 +27,12 @@ export const NavbarContainer = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  max-width: 40rem;
+  max-width: 30rem;
   min-width: 20rem;
   width: 4rem;
   height: 1rem;
   margin-bottom: 1rem;
-  border-radius: 0.5rem;
+  border-radius: 1rem;
   background-color: ${(props) => props.theme.palette.primary[800]};
   transition: all 200ms ease;
   animation-name: ${navAnim};
@@ -52,7 +52,7 @@ export const NavButton = styled(NavLink)`
   display: flex;
   align-items: center;
   padding: 0.4rem;
-  border-radius: 0.35rem;
+  border-radius: 0.5rem;
   color: ${(props) => props.theme.palette.text.inactive};
   transition: background-color 100s ease, all 200ms ease;
   transform: scale(0);

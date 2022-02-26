@@ -15,8 +15,7 @@ const GlobalStyle = createGlobalStyle`
   #root {
     display: flex;
     margin: 0;
-    padding: 0 0 6rem 0;
-    min-height: calc(100vh - 6rem);
+    min-height: 100vh;
     height: fit-content;
     width: 100vw;
     background-color: ${(props) => props.theme.palette.primary.default};
