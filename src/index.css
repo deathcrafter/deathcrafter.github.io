@@ -1,38 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700;800&display=swap");
-@import url("./fonts/Aquire/index.css");
-
-*,
-*::after,
-*::before {
-  user-select: none;
-  -moz-user-select: none;
-  -webkit-user-select: none;
-
-  padding: 0;
-  margin: 0;
-
-  font-family: "Rubik", sans-serif;
-}
-
-/* body {
-  overflow: hidden;
-} */
-
-#root {
-  display: flex;
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-  width: 100vw;
-}
-
-@media (orientation: portrait) {
-  #root {
-    flex-direction: column;
-  }
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400&display=swap");
+@import url("./fonts/Aquire/index");
+@import url("./fonts/Galderglynn\ Titling/index");

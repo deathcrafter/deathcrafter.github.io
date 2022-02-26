@@ -1,0 +1,73 @@
+import GlobalStyle from "./GlobalStyle";
+import useThemeDetector from "./ThemeDetector";
+
+const breakpoints = {
+  breakpoints: {
+    large: "1000px",
+    medium: "730px",
+    small: "450px",
+    xsmall: "",
+  },
+};
+
+const darkTheme = {
+  palette: {
+    primary: {
+      100: "#f3f3f4",
+      200: "#dadade",
+      300: "#c1c1c9",
+      400: "#a9a9b3",
+      500: "#90909d",
+      600: "#777788",
+      700: "#62626f",
+      800: "#4c4c56",
+      900: "#36363e",
+      default: "#25252a",
+    },
+    accent: {
+      default: "#9b78ff",
+      brighter: "#c1abff",
+    },
+    secondary: {
+      default: "#5575e7",
+      washedOut: "#879eed",
+    },
+    text: {
+      default: "#FEFEFE",
+      inactive: "#b8b8b8",
+    },
+  },
+  ...breakpoints,
+};
+
+const lightTheme = {
+  palette: {
+    primary: {
+      100: "#25252a",
+      200: "#36363e",
+      300: "#4c4c56",
+      400: "#62626f",
+      500: "#777788",
+      600: "#90909d",
+      700: "#a9a9b3",
+      800: "#c1c1c9",
+      900: "#dadade",
+      default: "#f3f3f4",
+    },
+    accent: {
+      default: "#9b78ff",
+      brighter: "#c1abff",
+    },
+    secondary: {
+      default: "#5575e7",
+      washedOut: "#879eed",
+    },
+    text: {
+      default: "#000000",
+      inactive: "#303030",
+    },
+  },
+  ...breakpoints,
+};
+
+export { GlobalStyle, useThemeDetector, darkTheme, lightTheme };
