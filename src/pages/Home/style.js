@@ -13,6 +13,7 @@ export const HomeContainer = styled.div`
     flex-direction: column-reverse;
     align-items: center;
     justify-content: flex-start;
+    padding-bottom: 6rem;
   }
 `;
 
