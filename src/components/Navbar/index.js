@@ -1,5 +1,10 @@
 import { useEffect, useState } from "react";
-import { NavbarSection, NavbarContainer, NavButton } from "./style";
+import {
+  NavbarSection,
+  NavbarContainer,
+  NavButtonContainer,
+  NavButton,
+} from "./style";
 import {
   HomeRounded,
   AlternateEmailRounded,
@@ -57,30 +62,50 @@ export default function Navbar(props) {
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
-        <NavButton
-          className={[active.active && "visible", !isMouseCapable && "visible"]}
-          to="/"
-        >
-          <HomeRounded style={{ fontSize: "2rem" }} />
-        </NavButton>
-        <NavButton
-          className={[active.active && "visible", !isMouseCapable && "visible"]}
-          to="/about"
-        >
-          <PersonRounded style={{ fontSize: "2rem" }} />
-        </NavButton>
-        <NavButton
-          className={[active.active && "visible", !isMouseCapable && "visible"]}
-          to="/blog"
-        >
-          <RssFeedRounded style={{ fontSize: "2rem" }} />
-        </NavButton>
-        <NavButton
-          className={[active.active && "visible", !isMouseCapable && "visible"]}
-          to="/contact"
-        >
-          <AlternateEmailRounded style={{ fontSize: "2rem" }} />
-        </NavButton>
+        <NavButtonContainer>
+          <NavButton
+            className={[
+              active.active && "visible",
+              !isMouseCapable && "visible",
+            ]}
+            to="/"
+          >
+            <HomeRounded style={{ fontSize: "2rem" }} />
+          </NavButton>
+        </NavButtonContainer>
+        <NavButtonContainer>
+          <NavButton
+            className={[
+              active.active && "visible",
+              !isMouseCapable && "visible",
+            ]}
+            to="/about"
+          >
+            <PersonRounded style={{ fontSize: "2rem" }} />
+          </NavButton>
+        </NavButtonContainer>
+        <NavButtonContainer>
+          <NavButton
+            className={[
+              active.active && "visible",
+              !isMouseCapable && "visible",
+            ]}
+            to="/blog"
+          >
+            <RssFeedRounded style={{ fontSize: "2rem" }} />
+          </NavButton>
+        </NavButtonContainer>
+        <NavButtonContainer>
+          <NavButton
+            className={[
+              active.active && "visible",
+              !isMouseCapable && "visible",
+            ]}
+            to="/contact"
+          >
+            <AlternateEmailRounded style={{ fontSize: "2rem" }} />
+          </NavButton>
+        </NavButtonContainer>
       </NavbarContainer>
     </NavbarSection>
   );

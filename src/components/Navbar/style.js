@@ -48,6 +48,13 @@ export const NavbarContainer = styled.div`
   }
 `;
 
+export const NavButtonContainer = styled.div`
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+`;
+
 export const NavButton = styled(NavLink)`
   display: flex;
   align-items: center;
@@ -65,7 +72,9 @@ export const NavButton = styled(NavLink)`
   }
   &.active {
     color: ${(props) => props.theme.palette.text.default};
-    box-shadow: inset 0 0 5px 5px #00000025;
+    /* padding: 0.4rem 0.15rem; */
+    border-left: 0.25rem solid ${(props) => props.theme.palette.accent.default};
+    border-right: 0.25rem solid ${(props) => props.theme.palette.accent.default};
   }
   &.visible {
     transform: scale(1);
