@@ -86,8 +86,8 @@ export const LogoSection = styled.div`
   justify-content: center;
   padding: 0 1rem 0 3rem;
 
-  background-image: url("./images/LogoBgHor.svg");
-  background-position: right top;
+  background-image: url("./images/LogoBgHorSm.svg");
+  background-position: right center;
   background-repeat: no-repeat;
   background-size: cover;
 
@@ -96,6 +96,11 @@ export const LogoSection = styled.div`
     background-position: center top;
     width: 100%;
     padding: 2rem 0 1rem 0;
+  }
+
+  @media screen and (orientation: landscape) and (min-height: 710px) {
+    background-position: right center;
+    background-image: url("./images/LogoBgHorLg.svg");
   }
 `;
 
