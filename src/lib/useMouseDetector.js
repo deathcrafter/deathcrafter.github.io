@@ -8,7 +8,7 @@ const useMouseDetector = () => {
   };
 
   useEffect(() => {
-    const mouseCapableMq = window.matchMedia("(prefers-color-scheme: dark)");
+    const mouseCapableMq = window.matchMedia("(pointer: fine)");
     mouseCapableMq.addEventListener("change", mqListener);
     return () => mouseCapableMq.removeEventListener("change", mqListener);
   }, []);

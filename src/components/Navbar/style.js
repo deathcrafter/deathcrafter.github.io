@@ -9,6 +9,7 @@ export const NavbarSection = styled.div`
   height: 6rem;
   justify-content: center;
   align-items: flex-end;
+  z-index: 99999;
 `;
 
 const navAnim = keyframes`
@@ -33,7 +34,7 @@ export const NavbarContainer = styled.div`
   height: 1rem;
   margin-bottom: 1rem;
   border-radius: 1rem;
-  background-color: ${(props) => props.theme.palette.primary[800]};
+  background-color: ${({ theme }) => theme.palette.primary[800]};
   transition: all 200ms ease;
   animation-name: ${navAnim};
   animation-duration: 1000ms;
@@ -60,21 +61,21 @@ export const NavButton = styled(NavLink)`
   align-items: center;
   padding: 0.4rem;
   border-radius: 0.5rem;
-  color: ${(props) => props.theme.palette.text.inactive};
+  color: ${({ theme }) => theme.palette.text.washedOut};
   transition: background-color 100s ease, all 200ms ease;
   transform: scale(0);
   &:hover {
     transition: all 100ms ease;
-    background-color: ${(props) => props.theme.palette.text.inactive + "33"};
+    background-color: ${({ theme }) => theme.palette.text.washedOut + "33"};
   }
   &:active {
-    background-color: ${(props) => props.theme.palette.text.inactive + "4d"};
+    background-color: ${({ theme }) => theme.palette.text.washedOut + "4d"};
   }
   &.active {
-    color: ${(props) => props.theme.palette.text.default};
+    color: ${({ theme }) => theme.palette.text.default};
     /* padding: 0.4rem 0.15rem; */
-    border-left: 0.25rem solid ${(props) => props.theme.palette.accent.default};
-    border-right: 0.25rem solid ${(props) => props.theme.palette.accent.default};
+    border-left: 0.25rem solid ${({ theme }) => theme.palette.accent.default};
+    border-right: 0.25rem solid ${({ theme }) => theme.palette.accent.default};
   }
   &.visible {
     transform: scale(1);

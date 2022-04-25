@@ -11,6 +11,7 @@ const breakpoints = {
 };
 
 const darkTheme = {
+  theme: "dark",
   palette: {
     primary: {
       100: "#f3f3f4",
@@ -34,13 +35,14 @@ const darkTheme = {
     },
     text: {
       default: "#FEFEFE",
-      inactive: "#b8b8b8",
+      washedOut: "#b8b8b8",
     },
   },
   ...breakpoints,
 };
 
 const lightTheme = {
+  theme: "light",
   palette: {
     primary: {
       100: "#25252a",
@@ -64,7 +66,7 @@ const lightTheme = {
     },
     text: {
       default: "#000000",
-      inactive: "#505050",
+      washedOut: "#505050",
     },
   },
   ...breakpoints,

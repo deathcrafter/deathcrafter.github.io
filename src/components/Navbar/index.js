@@ -58,7 +58,11 @@ export default function Navbar(props) {
   return (
     <NavbarSection>
       <NavbarContainer
-        className={[active.active && "active", !isMouseCapable && "active"]}
+        className={[
+          active.active && "active",
+          !isMouseCapable && "active",
+          // "active",
+        ]}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
@@ -67,6 +71,7 @@ export default function Navbar(props) {
             className={[
               active.active && "visible",
               !isMouseCapable && "visible",
+              // "visible",
             ]}
             to="/"
           >
@@ -78,6 +83,7 @@ export default function Navbar(props) {
             className={[
               active.active && "visible",
               !isMouseCapable && "visible",
+              // "visible",
             ]}
             to="/about"
           >
@@ -89,6 +95,7 @@ export default function Navbar(props) {
             className={[
               active.active && "visible",
               !isMouseCapable && "visible",
+              // "visible",
             ]}
             to="/blog"
           >
@@ -100,6 +107,7 @@ export default function Navbar(props) {
             className={[
               active.active && "visible",
               !isMouseCapable && "visible",
+              // "visible",
             ]}
             to="/contact"
           >

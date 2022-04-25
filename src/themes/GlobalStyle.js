@@ -9,8 +9,23 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     font-family: "Rubik", sans-serif;
   }
-  code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+  body {
+    overflow-x: hidden;
+    ::before {
+         content: " ";
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: ${({ theme }) => theme.palette.primary.default};
+        z-index: -999;
+      }
+  }
+  code * {
+    font-family: "Cascadia Code", source-code-pro, Menlo, Monaco, Consolas,
+      "Courier New", monospace !important;
   }
   #root {
     display: flex;
@@ -18,8 +33,23 @@ const GlobalStyle = createGlobalStyle`
     min-height: 100vh;
     height: fit-content;
     width: 100vw;
-    background-color: ${(props) => props.theme.palette.primary.default};
-    overflow: hidden;
+    /* padding-bottom: 6rem; */
+    ::before {
+      content: " ";
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.15;
+      /* */
+      background-image: url("./images/binback${({ theme }) => theme.theme}.png");
+      background-repeat: no-repeat;
+      background-position: 50% 0;
+      background-size: cover;
+      z-index: -998;
+    }
   }
   @media (orientation: portrait) {
     #root {
