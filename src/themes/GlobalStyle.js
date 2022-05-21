@@ -11,6 +11,8 @@ const GlobalStyle = createGlobalStyle`
   }
   body {
     overflow-x: hidden;
+    width: 100vw;
+    height: 100vh;
     ::before {
          content: " ";
         display: block;
@@ -42,9 +44,9 @@ const GlobalStyle = createGlobalStyle`
       top: 0;
       width: 100%;
       height: 100%;
-      opacity: 0.15;
+      opacity: 0.10;
       /* */
-      background-image: url("./images/binback${({ theme }) => theme.theme}.png");
+      background-image: url("./images/binback${({ theme }) => theme.theme}.webp");
       background-repeat: no-repeat;
       background-position: 50% 0;
       background-size: cover;

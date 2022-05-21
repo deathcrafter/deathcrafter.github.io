@@ -11,14 +11,15 @@ const selectedPosts = selector({
 	default: [],
 	get: async ({ get }) => {
 		const { data } = await axios.post(
-			// "https://deathcrafter-dev.herokuapp.com/posts",
-			"http://localhost:3002/posts",
+			"https://deathcrafter.herokuapp.com/posts",
+			// "http://localhost:3002/posts",
 			{
 				tag: get(selectedTag),
 			}
 		);
 		// console.log(posts.data);
-		return data;
+		data.sort((a, b) => Date.parse(a.date) > Date.parse(b.date));
+		return data.reverse();
 	},
 });
 
@@ -35,12 +36,13 @@ const selectedPost = selector({
 			const _id = get(selectedPostId);
 			if (_id !== "") {
 				const { data } = await axios.post(
-					// "https://deathcrafter-dev.herokuapp.com/posts",
-					"http://localhost:3002/posts/id",
+					"https://deathcrafter.herokuapp.com/posts/id",
+					// "http://localhost:3002/posts/id",
 					{
 						id: _id,
 					}
 				);
+				console.log(data);
 				return data;
 			} else {
 				return { body: "Post ID is empty!" };

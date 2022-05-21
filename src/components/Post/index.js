@@ -7,8 +7,9 @@ import gfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { materialDark, materialLight } from "react-syntax-highlighter/dist/esm/styles/prism";
+import Giscus from "@giscus/react";
 import { PostContainer, PostTitle, PostDate, Markdown, InlineCodeBlock } from "./style";
-import CircularProgress from "@mui/material/CircularProgress";
+import { LoadingPage } from "../../components";
 
 import * as dayjs from "dayjs";
 
@@ -48,6 +49,21 @@ function PostContent(props) {
 			>
 				{retrievedPost.body}
 			</Markdown>
+			<Giscus
+				id="comments"
+				repo="deathcrafter/deathcrafter.github.io"
+				repoId="R_kgDOGHL2Cg"
+				category="Comments"
+				categoryId="DIC_kwDOGHL2Cs4CPOMP"
+				mapping="url"
+				// term="Welcome to @giscus/react component!"
+				reactionsEnabled="1"
+				emitMetadata="0"
+				inputPosition="top"
+				theme="dark"
+				lang="en"
+				loading="lazy"
+			/>
 		</>
 	);
 }
@@ -60,7 +76,7 @@ export default function Post(props) {
 	});
 	return (
 		<PostContainer>
-			<Suspense fallback={<CircularProgress />}>
+			<Suspense fallback={<LoadingPage />}>
 				<PostContent />
 			</Suspense>
 		</PostContainer>

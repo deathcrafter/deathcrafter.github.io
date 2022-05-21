@@ -1,3 +1,5 @@
+import LoadingPage from "./Loading";
 import Navbar from "./Navbar";
+import Post from "./Post";
 
-export { Navbar };
+export { LoadingPage, Navbar, Post };

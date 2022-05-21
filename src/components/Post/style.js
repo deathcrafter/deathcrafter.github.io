@@ -1,14 +1,17 @@
 import styled from "styled-components";
 import ReactMarkdown from "react-markdown";
 
+// export const PostSection = styled.div``
+
 export const PostContainer = styled.div`
 	display: flex;
 	flex-direction: column;
 	gap: 1rem;
-	width: 60%;
-	min-width: 35rem;
+	width: 90%;
+	min-height: calc(100% - 6rem);
 	max-width: 60rem;
-	padding: 1.5rem;
+	padding: 5% 0;
+	margin-bottom: 6rem;
 `;
 
 const PostText = styled.p`
@@ -32,8 +35,9 @@ export const PostTitle = styled(PostText)`
 
 export const Markdown = styled(ReactMarkdown)`
 	* {
-		word-wrap: break-word;
+		overflow-wrap: break-word;
 		letter-spacing: 0.025rem;
+		font-weight: 400;
 	}
 	color: ${({ theme }) => theme.palette.text.default};
 	& p {
@@ -93,8 +97,13 @@ export const Markdown = styled(ReactMarkdown)`
 
 export const InlineCodeBlock = styled.span`
 	display: inline-block;
+	max-width: 100%;
+	overflow-wrap: anywhere;
 	border-radius: 0.3rem;
 	padding: 0.125rem 0.2rem;
+	font-family: "Cascadia Code";
+	font-size: 1rem;
+	font-weight: 300;
 	background-color: ${({ theme }) => theme.palette.primary[700]};
 	color: ${({ theme }) => theme.palette.primary[100]};
 `;
