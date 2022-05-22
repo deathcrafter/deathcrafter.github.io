@@ -3,7 +3,8 @@ import { Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 import { useRecoilValue } from "recoil";
 import { selectedPosts } from "../../state";
-import { PostSection, PostContainer, PostTitle, PostDate, PostDescription } from "./style";
+import { Container, Section, SectionTitle } from "../About/style";
+import { PostCard, PostTitle, PostDate, PostDescription } from "./style";
 import * as dayjs from "dayjs";
 import { LoadingPage, Post } from "../../components";
 
@@ -12,26 +13,19 @@ function Posts(props) {
 	return (
 		<>
 			{retrievedPosts.map((post) => (
-				<PostContainer
-					to={`posts/${post._id}`}
-					key={post._id}
-					// onClick={() => handleClick(post.id)}
-				>
+				<PostCard to={`posts/${post._id}`} key={post._id}>
 					<PostTitle>{post.title}</PostTitle>
 					<PostDate>📆 {dayjs(post.date).format("MMMM DD, YYYY")}</PostDate>
 					<PostDescription>{post.description}</PostDescription>
-				</PostContainer>
+				</PostCard>
 			))}
 		</>
 	);
 }
 
 export default function Blog(props) {
-	// const [tagSelected, setTagSelected] = useRecoilState(selectedTag);
-	// console.log(retrievedPosts);
-
 	return (
-		<PostSection>
+		<Container>
 			<Helmet>
 				<title>Blog</title>
 			</Helmet>
@@ -39,15 +33,16 @@ export default function Blog(props) {
 				<Route
 					path="/"
 					element={
-						// <PostSection>
-						<Suspense fallback={<LoadingPage />}>
-							<Posts />
-						</Suspense>
-						//</PostSection>
+						<Section>
+							<SectionTitle>Blog</SectionTitle>
+							<Suspense fallback={<LoadingPage />}>
+								<Posts />
+							</Suspense>
+						</Section>
 					}
 				/>
 				<Route path="/posts/:id" element={<Post />} />
 			</Routes>
-		</PostSection>
+		</Container>
 	);
 }

@@ -46,7 +46,7 @@ const CardGrid = styled.div`
 	}
 `;
 
-const CardBody = styled.div`
+const CardBody = styled.a`
 	grid-column: span 2;
 	display: flex;
 	gap: 0.7rem;
@@ -55,6 +55,7 @@ const CardBody = styled.div`
 	border-radius: 0.5rem;
 	background-color: ${({ theme }) => theme.palette.primary[900]};
 	box-shadow: 0 0 3px ${({ theme }) => theme.palette.accent.brighter};
+	text-decoration: none;
 
 	&:hover {
 		box-shadow: 0 0 5px ${({ theme }) => theme.palette.accent.brighter};
@@ -78,7 +79,7 @@ const CardText = styled(Text)`
 const Card = function (props) {
 	const { before, icon, text } = props;
 	return (
-		<CardBody>
+		<CardBody href={props.href} target="blank">
 			{before}
 			{icon ? <CardIcon src={icon} /> : <></>}
 			<CardText>{text}</CardText>
