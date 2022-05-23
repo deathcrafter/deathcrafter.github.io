@@ -32,12 +32,15 @@ export default function Contact(props) {
 				allowEnterKey: false,
 			});
 			try {
-				const response = await axios.post("http://localhost:3002/message", {
-					//"https://deathcrafter.herokuapp.com/message/", {
-					message: {
-						...data,
-					},
-				});
+				const response = await axios.post(
+					// "http://localhost:3002/message", {
+					"https://deathcrafter.herokuapp.com/message/",
+					{
+						message: {
+							...data,
+						},
+					}
+				);
 				if (response.data.success) {
 					MySwal.update({
 						title: "Message Sent",
@@ -135,43 +138,43 @@ export default function Contact(props) {
 					<CardGrid>
 						<Card
 							id="mail"
-							icon="./Images/gmail.svg"
+							icon="./images/gmail.svg"
 							text="Mail"
 							href="mailto:me@deathcrafter.dev"
 						/>
 						<Card
 							id="github"
-							icon="./Images/github.svg"
+							icon="./images/github.svg"
 							text="GitHub"
 							href="https://github.com/deathcrafter/"
 						/>
 						<Card
 							id="deviantart"
-							icon="./Images/deviantart.svg"
+							icon="./images/deviantart.svg"
 							text="Deviantart"
 							href="https://deviantart.com/deathcrafter18/"
 						/>
 						<Card
 							id="twitter"
-							icon="./Images/twitter.svg"
+							icon="./images/twitter.svg"
 							text="Twitter"
 							href="https://twitter.com/deathcrafterDev/"
 						/>
 						<Card
 							id="telegram"
-							icon="./Images/telegram.svg"
+							icon="./images/telegram.svg"
 							text="Telegram"
 							href="https://telegram.me/death_crafter/"
 						/>
 						<Card
 							id="instagram"
-							icon="./Images/instagram.svg"
+							icon="./images/instagram.svg"
 							text="Instagram"
 							href="https://instagram.com/death.crafter/"
 						/>
 						<Card
 							id="facebook"
-							icon="./Images/facebook.svg"
+							icon="./images/facebook.svg"
 							text="Facebook"
 							href="https://www.facebook.com/shaktijeet.17/"
 						/>
